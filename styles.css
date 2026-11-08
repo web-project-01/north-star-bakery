@@ -1,6 +1,7 @@
 /* North Star Bakery - Touchstone 3 design system
    Colors (4):  cream #FBF4E6 | brown #5B3418 | honey #C7791F | charcoal #2B2320
    Fonts (2):   Georgia (headings) and Arial (body)
+   Touchstone 4 adds a dark red (#9B1C1C) used only for form error messages
    Approach:    mobile-first, Flexbox layout, media query at 768px */
 
 :root {
@@ -8,6 +9,7 @@
   --brown: #5B3418;
   --honey: #C7791F;
   --charcoal: #2B2320;
+  --error: #9B1C1C;
   --font-heading: Georgia, "Times New Roman", serif;
   --font-body: Arial, Helvetica, sans-serif;
   --gap: 1rem;
@@ -299,11 +301,6 @@ textarea {
   resize: vertical;
 }
 
-input:invalid:not(:placeholder-shown),
-textarea:invalid:not(:placeholder-shown) {
-  border-color: var(--honey);
-}
-
 form > p {
   display: flex;
   flex-wrap: wrap;
@@ -398,4 +395,113 @@ footer p {
   form {
     max-width: 700px;
   }
+}
+
+/* ==========================================================
+   Touchstone 4: interactive pre-order list and form feedback
+   ========================================================== */
+
+/* Makes sure the hidden attribute always hides an element */
+[hidden] {
+  display: none !important;
+}
+
+/* Add to list buttons */
+.add-item {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--cream);
+  color: var(--brown);
+  font-size: 0.95rem;
+}
+
+.add-item[aria-pressed="true"] {
+  background-color: var(--honey);
+  border-color: var(--charcoal);
+  color: var(--charcoal);
+}
+
+/* Cart count shown in the navigation */
+.list-count {
+  display: inline-block;
+  min-width: 1.5rem;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background-color: var(--honey);
+  color: var(--charcoal);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Pre-order list panel on the products page */
+#list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+#list-items li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--brown);
+  border-radius: 6px;
+}
+
+.remove-item {
+  min-height: 40px;
+  padding: 0.35rem 0.8rem;
+  background-color: var(--cream);
+  color: var(--brown);
+}
+
+.list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+/* Form feedback */
+.error-message {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--error);
+  font-weight: bold;
+}
+
+.error-message:not(:empty)::before {
+  content: "\26A0  ";
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: var(--error);
+  border-width: 3px;
+}
+
+#prefill-note {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--brown);
+  font-style: italic;
+}
+
+#form-message {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 3px solid var(--brown);
+  border-radius: 8px;
+  background-color: var(--cream);
+  color: var(--brown);
+  font-weight: bold;
 }

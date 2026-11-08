@@ -6,6 +6,7 @@
   <meta name="description" content="Browse North Star Bakery breads, pastries, and cakes, with price ranges for pre-orders.">
   <title>North Star Bakery | Our Products</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -41,9 +42,12 @@
       <img src="bakery-bread.png" alt="A basket of fresh bread loaves and rolls cooling on a bakery counter">
       <p>Our breads are baked fresh each morning and sell out quickly, so we suggest pre-ordering for weekends.</p>
       <ul>
-        <li><strong>Signature Loaf:</strong> Our slow-risen house loaf. $7 to $9</li>
-        <li><strong>Sourdough Boule:</strong> Tangy, chewy, and great with soup. $8 to $10</li>
-        <li><strong>Dinner Rolls (half dozen):</strong> Soft and buttery, perfect for family meals. $6 to $8</li>
+        <li><strong>Signature Loaf:</strong> Our slow-risen house loaf. $7 to $9<br>
+          <button type="button" class="add-item" data-id="signature-loaf">Add to pre-order list</button></li>
+        <li><strong>Sourdough Boule:</strong> Tangy, chewy, and great with soup. $8 to $10<br>
+          <button type="button" class="add-item" data-id="sourdough-boule">Add to pre-order list</button></li>
+        <li><strong>Dinner Rolls (half dozen):</strong> Soft and buttery, perfect for family meals. $6 to $8<br>
+          <button type="button" class="add-item" data-id="dinner-rolls">Add to pre-order list</button></li>
       </ul>
     </section>
 
@@ -51,9 +55,12 @@
       <h2>Pastries</h2>
       <p>Our pastries are made with real butter and baked in small batches.</p>
       <ul>
-        <li><strong>Butter Croissant:</strong> Flaky layers with a golden finish. $3 to $4</li>
-        <li><strong>Seasonal Fruit Danish:</strong> Made with fruit from local growers when we can. $4 to $5</li>
-        <li><strong>Cinnamon Morning Bun:</strong> A sweet treat for a weekend breakfast. $4 to $5</li>
+        <li><strong>Butter Croissant:</strong> Flaky layers with a golden finish. $3 to $4<br>
+          <button type="button" class="add-item" data-id="butter-croissant">Add to pre-order list</button></li>
+        <li><strong>Seasonal Fruit Danish:</strong> Made with fruit from local growers when we can. $4 to $5<br>
+          <button type="button" class="add-item" data-id="fruit-danish">Add to pre-order list</button></li>
+        <li><strong>Cinnamon Morning Bun:</strong> A sweet treat for a weekend breakfast. $4 to $5<br>
+          <button type="button" class="add-item" data-id="cinnamon-bun">Add to pre-order list</button></li>
       </ul>
     </section>
 
@@ -61,13 +68,26 @@
       <h2>Cakes</h2>
       <p>We make cakes for birthdays, weddings, and community events. Please give us at least three days notice for custom orders.</p>
       <ul>
-        <li><strong>Everyday Cake (6 inch):</strong> Vanilla, chocolate, or lemon. $28 to $35</li>
-        <li><strong>Celebration Cake (9 inch):</strong> Layered and decorated for your event. $50 to $75</li>
-        <li><strong>Cupcakes (dozen):</strong> Great for parties and classrooms. $30 to $40</li>
+        <li><strong>Everyday Cake (6 inch):</strong> Vanilla, chocolate, or lemon. $28 to $35<br>
+          <button type="button" class="add-item" data-id="everyday-cake">Add to pre-order list</button></li>
+        <li><strong>Celebration Cake (9 inch):</strong> Layered and decorated for your event. $50 to $75<br>
+          <button type="button" class="add-item" data-id="celebration-cake">Add to pre-order list</button></li>
+        <li><strong>Cupcakes (dozen):</strong> Great for parties and classrooms. $30 to $40<br>
+          <button type="button" class="add-item" data-id="cupcakes">Add to pre-order list</button></li>
       </ul>
     </section>
 
     </div>
+
+    <section id="order-list-section">
+      <h2>Your Pre-Order List</h2>
+      <p id="list-status" aria-live="polite">Your list is empty. Choose &ldquo;Add to pre-order list&rdquo; on any item and it will be saved here.</p>
+      <ul id="list-items"></ul>
+      <p class="list-actions">
+        <a class="button" href="contact.html">Send my list with a pre-order request</a>
+        <button type="button" id="clear-list" hidden>Clear my list</button>
+      </p>
+    </section>
 
     <section>
       <h2>Ready to Order?</h2>
