@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Send a pre-order request or question to North Star Bakery, and find our location and hours.">
+  <title>North Star Bakery | Contact and Pre-Orders</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a class="logo-link" href="index.html"><img src="bakery-logo.png" alt="North Star Bakery logo with a small star above the bakery name" width="150"></a>
+    <p class="tagline">Fresh, handmade, and baked for the neighborhood</p>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact and Pre-Orders</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Contact Us and Pre-Order</h1>
+      <p>Have a question or want to reserve something fresh? Fill out the form below and we will reply by email within one business day. For cakes and large orders, please give us at least three days notice.</p>
+    </section>
+
+    <section>
+      <h2>Inquiry and Pre-Order Request</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Your Information</legend>
+
+          <p>
+            <label for="full-name">Full name (required)</label><br>
+            <input type="text" id="full-name" name="full-name" minlength="2" maxlength="60" autocomplete="name" required>
+          </p>
+
+          <p>
+            <label for="email">Email address (required)</label><br>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </p>
+
+          <p>
+            <label for="phone">Phone number (optional, format 555-555-5555)</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="555-555-5555" autocomplete="tel">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your Request</legend>
+
+          <p>
+            <label for="request-type">Request type (required)</label><br>
+            <select id="request-type" name="request-type" required>
+              <option value="">Please choose one</option>
+              <option value="pre-order">Pre-order for pickup</option>
+              <option value="event">Event or large order</option>
+              <option value="question">General question</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="pickup-date">Pickup date (required for pre-orders)</label><br>
+            <input type="date" id="pickup-date" name="pickup-date" min="2026-11-09">
+          </p>
+
+          <p>
+            <label for="item-details">Item details (required)</label><br>
+            <textarea id="item-details" name="item-details" rows="5" cols="40" maxlength="500" placeholder="Example: 2 Signature Loaves and a dozen cinnamon buns" required></textarea>
+          </p>
+
+          <p>
+            <label for="allergy-notes">Allergy notes (optional)</label><br>
+            <textarea id="allergy-notes" name="allergy-notes" rows="3" cols="40" maxlength="300" placeholder="Please tell us about any food allergies"></textarea>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Send My Request</button>
+          <button type="reset">Clear Form</button>
+        </p>
+      </form>
+    </section>
+
+    <div class="info-boxes">
+    <section>
+      <h2>Location</h2>
+      <address>
+        North Star Bakery<br>
+        214 Lantern Street<br>
+        Maple Hollow
+      </address>
+      <p>We are one block from the bus stop and have street parking in front of the shop.</p>
+    </section>
+
+    <section>
+      <h2>Hours of Operation</h2>
+      <ul>
+        <li>Monday: Closed</li>
+        <li>Tuesday to Friday: 7:00 AM to 5:00 PM</li>
+        <li>Saturday and Sunday: 8:00 AM to 3:00 PM</li>
+      </ul>
+    </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 North Star Bakery. Baked with care for our neighbors.</p>
+    <p>214 Lantern Street, Maple Hollow</p>
+  </footer>
+</body>
+</html>
